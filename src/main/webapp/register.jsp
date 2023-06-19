@@ -75,7 +75,7 @@
 	height: 745px;
 	background: linear-gradient(60deg, rgb(243, 189, 189),
 		rgb(254, 254, 210), rgb(214, 252, 214), rgb(181, 181, 250),
-		rgb(251, 106, 130));
+		rgb(251, 106, 133));
 	background-repeat: no-repeat;
 	background-size: cover;
 }
