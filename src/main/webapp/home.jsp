@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,18 +107,21 @@ a:hover {
 		<h2
 			style="color: blue; text-align: center; font-size: 50px; padding: 30px 0px">Login</h2>
 		<div class="container">
-			<form action="register">
+			<f:form action="register" modelAttribute="nullLogin">
 
-				<input type="text" id="username" name="username"
-					placeholder="Enter email " required> <br> <br> <input
-					type="password" id="password" name="password"
-					placeholder="Enter password" required> <br> <br>
-				- <input id="but" type="submit" value="login to register">
-			</form>
+				<f:input path="email" placeholder="Enter email"></f:input>
+				<br>
+				<br>
+				<f:input path="password" placeholder="Enter password"></f:input>
+				<br>
+				<br>
+				<input id="but" type="submit" value="login to register">
+			</f:form>
 		</div>
-		<p style="text-align: center;">
-			<a href="view">click here to view and Update if you are existing Student</a>
-		</p>
+		<!-- <p style="text-align: center;">
+			<a href="view">click here to view and Update if you are existing
+				Student</a>
+		</p> -->
 	</div>
 </body>
 </html>

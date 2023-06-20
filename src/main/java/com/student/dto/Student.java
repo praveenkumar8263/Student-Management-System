@@ -9,15 +9,16 @@ import org.springframework.stereotype.Component;
 public class Student 
 {
 	@javax.persistence.Id
-	private int Id;
+	private int id;
 	private String name;
 	private String college;
 	private String gender;
+
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getName() {
 		return name;
