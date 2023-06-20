@@ -105,7 +105,7 @@ a:hover {
 <body>
 	<div class="main">
 		<h2
-			style="color: blue; text-align: center; font-size: 50px; padding: 30px 0px">Sign with Google </h2>
+			style="color: blue; text-align: center; font-size: 50px; padding: 30px 0px">Login with Google </h2>
 		<div class="container">
 			<f:form action="register" modelAttribute="nullLogin">
 
