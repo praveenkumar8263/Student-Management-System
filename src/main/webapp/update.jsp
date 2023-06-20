@@ -34,10 +34,8 @@
 }
 
 .container form input {
-	padding-left: 20px;
+	padding: 10px 20px;
 	background-color: lightlack;
-	width: 300px;
-	height: 40px;
 	font-size: 17px;
 	border: 1.2px solid; #74 FE81;
 	border-radius: 30px;
@@ -80,11 +78,22 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+select {
+	font-size: 15px;
+	padding: 4px 3px;
+	border-color: #ccc;
+	border-radius:30px; 
+}
+select option {
+	margin: 5px 2px;
+	
+}
 </style>
 </head>
 <body>
 	<div class="main">
-	<h1 style="color: blue; padding-top: 30px;color: " align="center">Update Data</h1>
+		<h1 style="color: blue; padding-top: 30px; color:" align="center">Update
+			Data</h1>
 		<div class="container">
 			<f:form action="saveUpdateStudent" modelAttribute="student">
 				<f:input path="id" readonly="true" />
@@ -99,6 +108,20 @@
 				<f:input path="gender" placeholder="Enter Student Gender" />
 				<br>
 				<br>
+				<label>Qualification:</label>
+				<f:select path="qualification">
+					<f:option value="" label="--Select--" />
+					<f:option value="High School" label="High School" />
+					<f:option value="Bachelor's Degree" label="Bachelor's Degree" />
+					<f:option value="Master's Degree" label="Master's Degree" />
+					<f:option value="Ph.D." label="Ph.D." />
+				</f:select>
+				<br />
+				<br />
+				<label>Date of Birth:</label>
+				<f:input path="dateOfBirth" type="date" placeholder="Enter DOB" />
+				<br />
+				<br />
 				<input id="but" type="submit" value="update">
 			</f:form>
 		</div>

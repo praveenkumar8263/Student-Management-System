@@ -48,6 +48,8 @@ a:hover {
 					<th>Student_Name</th>
 					<th>Student_College</th>
 					<th>Student_Gender</th>
+					<th>Student_Qualification</th>
+					<th>Student_DOB</th>
 					<th>EDIT</th>
 					<th>DELETE</th>
 				</tr>
@@ -57,6 +59,8 @@ a:hover {
 						<td>${student.getName()}</td>
 						<td>${student.getCollege()}</td>
 						<td>${student.getGender()}</td>
+						<td>${student.getQualification()}</td>
+						<td>${student.getDateOfBirth()}</td>
 						<td><a href="updateStudentData?id=${student.getId()}">CLICK
 								HERE TO EDIT</a></td>
 						<td><a href="deleteStudentData?id=${student.getId()}">CLICK

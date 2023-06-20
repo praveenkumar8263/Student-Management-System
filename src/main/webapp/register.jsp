@@ -33,10 +33,8 @@
 }
 
 .container form input {
-	padding-left: 20px;
+	padding: 10px 20px;
 	background-color: lightlack;
-	width: 300px;
-	height: 40px;
 	font-size: 17px;
 	border: 1.2px solid; #74 FE81;
 	border-radius: 30px;
@@ -79,13 +77,75 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+label {
+	margin: 10px 10px;
+}
+
+select {
+	font-size: 15px;
+	padding: 4px 3px;
+	border-color: #ccc;
+	border-radius:30px; 
+}
+select option {
+	margin: 5px 2px;
+	
+}
+
 </style>
+<script>
+	function validateForm() {
+		var id = document.getElementById("id").value;
+		var name = document.getElementById("name").value;
+		var college = document.getElementById("college").value;
+		var gender = document.querySelector('input[name="gender"]:checked');
+		var qualification = document.getElementById("qualification").value;
+		var dateOfBirth = document.getElementById("dateOfBirth").value;
+
+		if (id.trim() === "") {
+			alert("Please enter Student ID");
+			return false;
+		}
+
+		if (name.trim() === "") {
+			alert("Please enter Student Name");
+			return false;
+		}
+
+		if (college.trim() === "") {
+			alert("Please enter College Name");
+			return false;
+		}
+
+		if (!gender) {
+			alert("Please select a Gender");
+			return false;
+		}
+
+		if (qualification.trim() === "") {
+			alert("Please select a Qualification");
+			return false;
+		}
+
+		if (dateOfBirth.trim() === "") {
+			alert("Please enter Date of Birth");
+			return false;
+		}
+
+		alert("Registration successful");
+		return true;
+	}
+</script>
+
 </head>
 <body>
 	<div class="main">
-		<h1 style="color: blue; padding-top: 40px; font-size: 40px" align="center">Registration Form</h1>
+		<h1 style="color: blue; padding-top: 40px; font-size: 40px"
+			align="center">Registration Form</h1>
 		<div class="container">
-			<f:form action="save" modelAttribute="student">
+			<f:form action="save" modelAttribute="student"
+				onsubmit="return validateForm()">
 				<f:input path="id" placeholder="Enter Student Id" />
 				<br>
 				<br>
@@ -95,9 +155,29 @@
 				<f:input path="college" placeholder="Enter College Name" />
 				<br>
 				<br>
-				<f:input path="gender" placeholder="Enter Gender" />
+				<%-- <f:input path="gender" placeholder="Enter Gender" />
 				<br>
-				<br>
+				<br> --%>
+				<label>Gender:</label>
+				<f:radiobutton path="gender" value="Male" label="Male" />
+				<f:radiobutton path="gender" value="Female" label="Female" />
+				<f:radiobutton path="gender" value="Other" label="Other" />
+				<br />
+				<br />
+				<label>Qualification:</label>
+				<f:select path="qualification">
+					<f:option value="" label="--Select--" />
+					<f:option value="High School" label="High School" />
+					<f:option value="Bachelor's Degree" label="Bachelor's Degree" />
+					<f:option value="Master's Degree" label="Master's Degree" />
+					<f:option value="Ph.D." label="Ph.D." />
+				</f:select>
+				<br />
+				<br />
+				<label>Date of Birth:</label>
+				<f:input path="dateOfBirth" type="date" placeholder="Enter DOB" />
+				<br />
+				<br />
 				<input id="but" type="submit" value="register" />
 			</f:form>
 		</div>

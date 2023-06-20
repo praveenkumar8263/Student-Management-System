@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,27 +100,51 @@ a:hover {
 	transition: .8s;
 }
 </style>
+<script>
+function validateForm() {
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  if (email.trim() === "") {
+    alert("Please enter your email");
+    return false;
+  }
+
+  if (!email.includes("@")) {
+    alert("Invalid email format");
+    return false;
+  }
+
+  if (password.trim() === "") {
+    alert("Please enter your password");
+    return false;
+  }
+
+  if (password.length < 6) {
+    alert("Password should be at least 6 characters long");
+    return false;
+  }
+
+  // Simulate successful login
+  alert("Login successful");
+  return true;
+}
+</script>
+
+
 </head>
 <body>
-	<div class="main">
-		<h2
-			style="color: blue; text-align: center; font-size: 50px; padding: 30px 0px">Login with Google </h2>
-		<div class="container">
-			<f:form action="register" modelAttribute="nullLogin">
-
-				<f:input path="email" placeholder="Enter email"></f:input>
-				<br>
-				<br>
-				<f:input path="password" placeholder="Enter password"></f:input>
-				<br>
-				<br>
-				<input id="but" type="submit" value="login to register">
-			</f:form>
-		</div>
-		<!-- <p style="text-align: center;">
-			<a href="view">click here to view and Update if you are existing
-				Student</a>
-		</p> -->
-	</div>
+  <div class="main">
+    <h2 style="color: blue; text-align: center; font-size: 50px; padding: 30px 0px">Login with Google </h2>
+    <div class="container">
+      <f:form action="register" modelAttribute="nullLogin" onsubmit="return validateForm()">
+        <f:input path="email" placeholder="Enter email"></f:input>
+        <br><br>
+        <f:input path="password" placeholder="Enter password"></f:input>
+        <br><br>
+        <input id="but" type="submit" value="Login to Register">
+      </f:form>
+    </div>
+  </div>
 </body>
 </html>
