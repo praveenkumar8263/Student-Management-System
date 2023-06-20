@@ -1,5 +1,7 @@
 package com.student.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,7 +32,17 @@ public class StudentController {
 
 	@RequestMapping("/register")
 	public ModelAndView registerPage(@ModelAttribute Login login) {
+
+		List<Login> listlogin = loginDao.getAllLogins();
 		ModelAndView modelAndView = new ModelAndView();
+		for (Login login2 : listlogin) {
+
+			if (login.getEmail().equals(login2.getEmail())) {
+				modelAndView.addObject("student", new Student());
+				modelAndView.setViewName("error.jsp");
+				return modelAndView;
+			}
+		}
 		loginDao.insertStudentData(login);
 		modelAndView.addObject("student", new Student());
 		modelAndView.setViewName("register.jsp");
@@ -81,6 +93,7 @@ public class StudentController {
 		modelAndView.addObject("students", studentDao.getAllStudents());
 		return modelAndView;
 	}
+
 	@RequestMapping("/login")
 	public ModelAndView loginUser() {
 		ModelAndView modelAndView = new ModelAndView();

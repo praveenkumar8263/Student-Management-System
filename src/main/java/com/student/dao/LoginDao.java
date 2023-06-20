@@ -24,7 +24,7 @@ public class LoginDao {
 		entityManager.persist(login);
 		entityTransaction.commit();
 	}
-	public List<Login> getAllStudents() {
+	public List<Login> getAllLogins() {
 		javax.persistence.Query query = entityManager.createQuery("select l from Login l");
 		List<Login> logins = query.getResultList();
 		return logins;
