@@ -41,7 +41,7 @@ public class StudentController {
 	public ModelAndView saveStudent(@ModelAttribute Student student) {
 		ModelAndView modelAndView = new ModelAndView();
 		studentDao.insertStudentData(student);
-		modelAndView.setViewName("home.jsp");
+		modelAndView.setViewName("loginhome.jsp");
 		modelAndView.addObject("nullLogin", new Login());
 		return modelAndView;
 	}

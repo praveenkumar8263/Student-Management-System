@@ -51,7 +51,6 @@ a:hover {
 					<th>EDIT</th>
 					<th>DELETE</th>
 				</tr>
-
 				<c:forEach var="student" items="${students}">
 					<tr>
 						<td>${student.getId()}</td>
