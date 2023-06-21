@@ -105,9 +105,6 @@ select option {
 				<f:input path="college" placeholder="Enter College Name" />
 				<br>
 				<br>
-				<f:input path="gender" placeholder="Enter Student Gender" />
-				<br>
-				<br>
 				<label>Qualification:</label>
 				<f:select path="qualification">
 					<f:option value="" label="--Select--" />

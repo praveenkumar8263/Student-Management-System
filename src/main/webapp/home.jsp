@@ -125,7 +125,6 @@ function validateForm() {
     return false;
   }
 
-  // Simulate successful login
   alert("Login successful");
   return true;
 }
