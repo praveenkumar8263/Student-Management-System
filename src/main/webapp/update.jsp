@@ -105,9 +105,12 @@ select option {
 				<f:input path="college" placeholder="Enter College Name" />
 				<br>
 				<br>
-				<f:input path="gender" placeholder="Enter Student Gender" />
-				<br>
-				<br>
+				<label>Gender:</label>
+				<f:radiobutton path="gender" value="Male" label="Male" />
+				<f:radiobutton path="gender" value="Female" label="Female" />
+				<f:radiobutton path="gender" value="Other" label="Other" />
+				<br />
+				<br />
 				<label>Qualification:</label>
 				<f:select path="qualification">
 					<f:option value="" label="--Select--" />
